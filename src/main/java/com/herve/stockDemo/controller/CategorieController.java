@@ -27,15 +27,16 @@ public class CategorieController {
     private final CategorieServiceImpl categorieService;
 
     @GetMapping
-    public ResponseEntity<List<CategorieRecord>> getAllCategories() {
-        var all = categorieService.getAllCategories();
+    public ResponseEntity<List<CategorieRecord>> getAllCategorieRecords() {
+        var all = categorieService.getAllCategorieRecords();
         return ResponseEntity.ok(all);
     }
 
-    // public ResponseEntity<List<Categorie>> getAllCategories() {
-    //     var all = categorieService.getAllCategories();
-    //     return ResponseEntity.ok(all);
-    // }
+    @GetMapping("/all")
+    public ResponseEntity<List<Categorie>> getAllCategories() {
+        var all = categorieService.getAllCategories();
+        return ResponseEntity.ok(all);
+    }
 
     @GetMapping("/{id}")
     public ResponseEntity<Categorie> getCategorieById(@PathVariable Long id) {

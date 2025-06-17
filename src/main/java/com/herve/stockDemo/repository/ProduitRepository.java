@@ -22,9 +22,8 @@ public interface ProduitRepository extends JpaRepository<Produit, Long> {
     List<Produit> findByCategorie_NomCategorie(String categorieNom);
 
     @Query("""
-            SELECT p.code, p.nom, c.codeCategorie, c.nomCategorie
+            SELECT p.code, p.nom, p.categorie.codeCategorie, p.categorie.nomCategorie
             FROM Produit p
-            JOIN Categorie c ON p.id=c.id
             """)
     List<ProduitRecord> getAllProduitsWithCategorie();
 

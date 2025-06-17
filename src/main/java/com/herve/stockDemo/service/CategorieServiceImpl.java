@@ -18,12 +18,12 @@ public class CategorieServiceImpl {
 
     private final CategorieRepository categorieRepository;
 
-    public List<Categorie> findAllCategories() {
-        return categorieRepository.findAll();
+    public List<Categorie> getAllCategories() {
+        return categorieRepository.findAllCategories();
     }
 
-    public List<CategorieRecord> getAllCategories() {
-        return categorieRepository.findAllCategories();
+    public List<CategorieRecord> getAllCategorieRecords() {
+        return categorieRepository.findAllCategorieRecords();
     }
 
     public Optional<Categorie> getCategorieById(Long id) {
